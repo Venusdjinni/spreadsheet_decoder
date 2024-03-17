@@ -295,7 +295,9 @@ class XlsxDecoder extends SpreadsheetDecoder {
       if (node.localName == 't') {
         list.add(_parseValue(node));
       } else if (node.localName == 'r') {
-        list.add(_parseRichText(node));
+        /// récupère le contenu non parsé de la cellule
+        list.add(node.toString());
+        //list.add(_parseRichText(node));
       } else {
         // ignores <rPh> and <phoneticPr>
       }
